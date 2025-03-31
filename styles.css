@@ -1,0 +1,278 @@
+ /* Stile del body con font sans-serif sfondo di colore verde oliva */
+body {
+  font-family: sans-serif;
+  margin: 0; 
+  padding: 0;
+  background-color: #163c0d;
+}
+
+/* Stile Navbar con elementi centrati e la navbar occupa tutta la larghezza  */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #163c0d;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* usato per evitare che il logo si riduce se lo spazio è limitato*/
+.navbar-brand {
+  flex-shrink: 0;
+}
+ /*usato per impostare l'altezza del logo mentre per la larghezza vengono mantenute le misure originale*/
+.navbar-brand .logo {
+  height: 60px;
+  max-height: 70px;
+  width: 100%;
+}
+/*usato per occupare tutta la larghezza disponibile*/
+.navbar-links {
+ width: 100%;
+}
+/*usato per definire lo stile degli elementi della navbar*/
+.navbar-link {
+  color: #FDF7E3;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+
+/* Sezione Immagine */
+.image-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Sezione del Paragrafo definisce colore allineamento e spazio */
+.section-progress {
+  text-align: center;
+  color: #FDF7E3;
+  padding: 40px 20px;
+}
+
+/* definisce titolo h2*/
+.section-progress h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* definisce paragrafo p*/
+.section-progress p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Sezione La nostra visione */
+.section-vision {
+  text-align: center;
+  color: #FDF7E3;
+  padding: 40px 20px;
+}
+
+/* definisce elementi h2*/
+.section-vision h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.vision-text {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.vision-author {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.section-values {
+  text-align: center;
+  color: #FDF7E3; 
+  font-size: 32px; 
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+/* Contenitore delle card */
+.flip-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Stile delle card */
+.flip-card {
+  width: 23%; /* 4 card per riga */
+  max-width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+/*definisce animazione ed effetto 3d*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* viene ruotata la card quando si passa sopra con il mouse*/
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* serve per non rendere visibile la parte del retro della card
+ finchè non viene completamente girata */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* serve per far adattare l'immagine*/
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*serve per far apparire la oarte posteriore della card solo quando è 
+completamente girata*/
+.flip-card-back {
+  color: black;
+  background-color: #90c983;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.flip-card-back h3 {
+  margin-bottom: 10px;
+  font-size: 20px; 
+  font-weight: bold;
+}
+
+/* Responsività */
+@media (max-width: 900px) {
+  .flip-card {
+    width: 45%; /* Due card per riga su tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .flip-card {
+    width: 100%; /* Una card per riga su schermi piccoli */
+  }
+}
+/* Stili per la sezione Download dei Report */
+.report-download-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #163c0d;
+  color: #FDF7E3;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.report-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*serve per ottimizare grafica della card come ombre e bordi arrotondati*/
+
+.report-card {
+  position: relative;
+  width: 45%; /* Due card per riga */
+  max-width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.report-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*serve per rendere le scritte visibili solo quando il mouse passa sopra alla card*/
+.report-card .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.report-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+  .report-card {
+    width: 100%; /* Una card per riga su schermi piccoli */
+  }
+}
+
+/*serve per impostare il layout del footer */
+footer {
+  background-color: #0b1c06;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 40px; /* Margine superiore per evitare sovrapposizioni */
+}
+
+#disclaimer {
+  font-size: 12px;
+  color: #ccc;
+}
